@@ -10,18 +10,20 @@ export default function ArrayStateVariable() {
     return (
         <div id="wd-array-state-variables">
             <h2>Array State Variable</h2>
-            <button onClick={addElement}>Add Element</button>
-            <ul>
+            <div className="mb-3">
+                <button onClick={addElement} className="btn btn-success me-2">Add Element</button>
+            </div>
+            <ul className="list-group">
                 {array.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                         {item}
-                        <button onClick={() => deleteElement(index)}
-                            id="wd-delete-element-click">
-                            Delete</button>
+                        <button onClick={() => deleteElement(index)} className="btn btn-danger btn-sm">
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>
             <hr />
-        </div>
+        </div >
     );
 }

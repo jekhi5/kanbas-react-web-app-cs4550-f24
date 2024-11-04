@@ -5,8 +5,10 @@ import Counter from "./Counter";
 import DateStateVariable from "./DateStateVariable";
 import EventObject from "./EventObject";
 import ObjectStateVariable from "./ObjectStateVariable";
+import ParentStateComponent from "./ParentStateComponent";
 import PassingDataOnEvent from "./PassingDataOnEvent";
 import PassingFunctions from "./PassingFunctions";
+import ReduxExamples from "./ReduxExamples";
 import StringStateVariables from "./StringStateVariables";
 
 export default function Lab4() {
@@ -28,5 +30,7 @@ export default function Lab4() {
             <DateStateVariable />
             <ObjectStateVariable />
             <ArrayStateVariable />
+            <ParentStateComponent />
+            <ReduxExamples />
         </div>);
 }
