@@ -1,0 +1,32 @@
+[
+    {
+      "_id": "Q101",
+      "title": "Propulsion Quiz",
+      "course": "RS101",
+      "releaseDate": "2025-01-15",
+      "dueDate": "2025-02-15",
+      "points": 100,
+      "quizType": "Graded Quiz",
+      "description": "The assignment is available online. Submit a link to the landing page of your Web application running on Netlify. The Kanbas application should include a link to navigate back to the landing page.",
+      "shuffleAnswers": "True",
+      "submissionType": "Online",
+      "displayGradeAs": "Percentage",
+      "onlineEntryOptions": ["Text Entry"],
+      "assignTo": "Everyone",
+      "availableUntil": "2028-05-09",
+      "questions": [{
+        
+            "number": "1",
+            "description": "An HTML label element can be associated with HTML input element by setting their id attributes to the same value. The resulting effect is that when you click on the label text, the input element receives focus as if you had click on the input element itself",
+            "type": "Multiple Choice",
+            "points": "5"
+        },
+        {
+            "number": "2",
+            "description": "This is an open response",
+            "type": "Open Response",
+            "points": "10"
+        }
+    ]
+    }
+]
