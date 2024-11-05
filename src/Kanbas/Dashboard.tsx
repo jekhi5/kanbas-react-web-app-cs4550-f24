@@ -12,7 +12,7 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
     const { enrollments } = db.default;
 
 
-    return (!currentUser ? <div> No user found, unable to load courses for undefined user </div> :
+    return (!currentUser ? <div> ERROR! UNABLE TO LOAD USER COURSE INFORMATION </div> :
         <div id="wd-dashboard">
             <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
             <h5>New Course
