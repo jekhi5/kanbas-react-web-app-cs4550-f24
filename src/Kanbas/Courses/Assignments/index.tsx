@@ -6,9 +6,10 @@ import { PiNotePencilDuotone } from "react-icons/pi";
 import { IoIosArrowDown } from "react-icons/io";
 import { useParams } from "react-router";
 import { format } from 'date-fns';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProtectedRoute from "../../Account/ProtectedRoute";
+import { deleteAssignment } from "./reducer";
 
 
 export default function Assignments() {
@@ -17,6 +18,7 @@ export default function Assignments() {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
     const todaysDate = new Date().setHours(0, 0, 0, 0);
     const isFaculty = currentUser.role && currentUser.role === 'FACULTY';
+    const dispatch = useDispatch();
 
     return (
         <div>
@@ -56,7 +58,11 @@ export default function Assignments() {
                                             <span className="text-danger"> Multiple Modules </span> | {(assignment.releaseDate && Date.parse(assignment.releaseDate.replace(/-/g, " ")) > todaysDate) ? <span><b>Not Available until </b>{format(assignment.releaseDate, "MMMM d 'at' hh:mma") + ' |'}</span> : ''} <span><b>Due</b> {format(assignment.dueDate, "MMMM d 'at' hh:mma")} | {assignment.points} pts</span>
                                         </div>
                                         <div className="ms-auto p-2 my-auto">
-                                            {isFaculty && <AssignmentControlButtons />}
+                                            {isFaculty && <AssignmentControlButtons
+                                                assignmentId={assignment._id}
+                                                deleteAssignment={(assignmentId) => {
+                                                    dispatch(deleteAssignment(assignmentId));
+                                                }} />}
                                         </div>
                                     </div>
                                 </li>))}
