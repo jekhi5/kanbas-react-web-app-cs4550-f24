@@ -1,7 +1,7 @@
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "../GreenCheckmark";
 import { CiNoWaitingSign } from "react-icons/ci";
-import ModuleEditor from "./ModeuleEditor";
+import ModuleEditor from "./ModuleEditor";
 import { useSelector } from "react-redux";
 
 export default function ModulesControls({ moduleName, setModuleName, addModule }:

@@ -31,6 +31,13 @@ export default function Courses({ courses }: { courses: any[]; }) {
                         <Route path="Home" element={<Home />} />
                         <Route path="Modules" element={<Modules />} />
                         <Route path="Assignments" element={<Assignments />} />
+                        <Route path="Assignments/new" element={
+                            <ProtectedRoute
+                                requiredAttribute={{
+                                    key: 'role', val: 'FACULTY', altRoute: `Courses/${course._id}/Assignments`
+                                }}>
+                                <AssignmentEditor />
+                            </ProtectedRoute>} />
                         <Route path="Assignments/:aid" element={
                             <ProtectedRoute
                                 requiredAttribute={{
