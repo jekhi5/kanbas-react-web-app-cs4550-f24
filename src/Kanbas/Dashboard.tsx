@@ -44,7 +44,11 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
             <h5>New Course
                 <button className="btn btn-primary float-end"
                     id="wd-add-new-course-click"
-                    onClick={addNewCourse} > Add </button>
+                    onClick={() => {
+                        addNewCourse();
+                        setUserCourses([...userCourses, course]);
+                    }
+                    } > Add </button>
                 <button className="btn btn-warning float-end me-2"
                     onClick={updateCourse} id="wd-update-course-click">
                     Update
